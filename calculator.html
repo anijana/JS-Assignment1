@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #40407a;
+    }
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    form {
+      width: 400px;
+      height: 520px;
+      box-shadow: 0 0 10px 1px white;
+    }
+    #cal1 {
+      width: inherit;
+      font-size: 0.8rem;
+      padding: 2px 0 2px 10px;
+      background-color: #aaa69d;
+      color: white;
+      border: none;
+      outline: none;
+    }
+    #result {
+      width: inherit;
+      height: 100px;
+      background-color: #aaa69d;
+      font-size: 2rem;
+      color: white;
+      text-align: right;
+      outline: none;
+      border: none;
+    }
+    .number2 {
+      width: inherit;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+
+    }
+    input {
+      flex: 1;
+    }
+    .number1 {
+      width: inherit;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <form name="cal">
+      <input type="text" value="calculator" id="cal1">
+
+      <input type="text" name="answers" id="result">
+      <div class="button2">
+          <input type="button" value="clear" id="clearbutton" onclick="cal.answers.value= '' " >
+          <input type="button" value="=" onclick="cal.answers.value = eval(cal.answers.value) " >
+      </div>
+
+      <div class="button2">
+        <input type="button" class="main_num" value="7" onclick="cal.answers.value += '7' ">
+        <input type="button" class="main_num" value="8" onclick="cal.answers.value += '8' ">
+        <input type="button" class="main_num" value="9" onclick="cal.answers.value += '9' ">
+        <input type="button" class="oper" value="*" onclick="cal.answers.value += '*' ">
+      </div>
+      <div class="button2">
+        <input type="button" class="main_num" value="4" onclick="cal.answers.value += '4' ">
+        <input type="button" class="main_num" value="5" onclick="cal.answers.value += '5' ">
+        <input type="button" class="main_num" value="6" onclick="cal.answers.value += '6' ">
+        <input type="button" class="oper" value="-" onclick="cal.answers.value += '-' ">
+      </div>
+      <div class="button2">
+        <input type="button" class="main_num" value="1" onclick="cal.answers.value += '1' ">
+        <input type="button" class="main_num" value="2" onclick="cal.answers.value += '2' ">
+        <input type="button" class="main_num" value="3" onclick="cal.answers.value += '3' ">
+        <input type="button" class="oper" value="+" onclick="cal.answers.value += '+' ">
+      </div>
+      <div class="button2">
+        <input type="button" class="oper" value="." onclick="cal.answers.value += '.' ">
+        <input type="button" class="main_num" value="0" onclick="cal.answers.value += '0' ">
+        <input type="button" class="oper" value="%" onclick="cal.answers.value += '%' ">
+        <input type="button" class="oper" value="/" onclick="cal.answers.value += '/' ">
+      </div>
+    </form>
+
+  </div>
+  <script></script>
+</body>
+</html>

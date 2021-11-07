@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      div {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #34495e;
+      }
+      p {
+        height: 100px;
+        width: 600px;
+        background-color: #a5b1c2;
+        color: white;
+        line-height: 100px;
+        text-align: center;
+        font-size: 60px;
+      }
+      h1 {
+          color:#a5b1c2 ;
+          margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>COUNTDOWN TIMER</h1>
+      <p id="timer"></p>
+    </div>
+
+    <script>
+      let dateTime = new Date("Dec 31, 2021 10:00:00").getTime();
+      let x = setInterval(function () {
+        let current = new Date().getTime();
+        let diff = dateTime - current;
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        console.log(days);
+        let hours = Math.floor(
+          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        console.log(hours);
+        let mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        console.log(mins);
+        let secs = Math.floor((diff % (1000 * 60)) / 1000);
+        console.log(secs);
+        document.getElementById("timer").innerHTML = days + "days, " + hours + "hrs: " + mins + "m: " + secs + "s "
+      }, 1000 );
+    </script>
+  </body>
+</html>
